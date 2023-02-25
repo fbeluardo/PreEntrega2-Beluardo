@@ -24,7 +24,18 @@ const USUARIO_TRES = parseFloat(prompt("Ingresar año de nacimiento del tercer u
 const USUARIO_CUATRO = parseFloat(prompt("Ingresar año de nacimiento del cuarto usuario registrado"));
 const ANIO_ACTUAL = 2023
 
-const EDAD = ANIO_ACTUAL 
+const EDAD_UNO = ANIO_ACTUAL - USUARIO_UNO
+const EDAD_DOS = ANIO_ACTUAL - USUARIO_DOS
+const EDAD_TRES = ANIO_ACTUAL - USUARIO_TRES
+const EDAD_CUATRO = ANIO_ACTUAL - USUARIO_CUATRO
+
+alert (EDAD_UNO)
+alert (EDAD_DOS)
+alert (EDAD_TRES)
+alert (EDAD_CUATRO)
+
+
+
 
 
 
