@@ -17,11 +17,12 @@
 //     console.log (DESCUENTO)
 // }
 
+//EDADES Y PROMEDIO DE EDAD DE USUARIOS REGISTRADOS//
 
-const USUARIO_UNO = parseFloat(prompt("Ingresar año de nacimiento del primer usuario registrado"));
-const USUARIO_DOS = parseFloat(prompt("Ingresar año de nacimiento del segundo usuario registrado"));
-const USUARIO_TRES = parseFloat(prompt("Ingresar año de nacimiento del tercer usuario registrado"));
-const USUARIO_CUATRO = parseFloat(prompt("Ingresar año de nacimiento del cuarto usuario registrado"));
+const USUARIO_UNO = prompt("Ingresar año de nacimiento del primer usuario registrado");
+const USUARIO_DOS = prompt("Ingresar año de nacimiento del segundo usuario registrado");
+const USUARIO_TRES = prompt("Ingresar año de nacimiento del tercer usuario registrado");
+const USUARIO_CUATRO = prompt("Ingresar año de nacimiento del cuarto usuario registrado");
 const ANIO_ACTUAL = 2023
 
 const EDAD_UNO = ANIO_ACTUAL - USUARIO_UNO
@@ -33,6 +34,12 @@ alert (EDAD_UNO)
 alert (EDAD_DOS)
 alert (EDAD_TRES)
 alert (EDAD_CUATRO)
+
+SUMATORIA = EDAD_UNO + EDAD_DOS + EDAD_TRES + EDAD_CUATRO
+PROMEDIO = SUMATORIA / 4
+alert (PROMEDIO)
+
+// FALTARIA AGREGAR LAS SIGUIENTES SENTENCIAS: IF, ELSE, FUNCTION, FOR //
 
 
 
