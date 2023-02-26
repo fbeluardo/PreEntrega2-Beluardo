@@ -17,7 +17,7 @@
 //     console.log (DESCUENTO)
 // }
 
-//EDADES Y PROMEDIO DE EDAD DE USUARIOS//
+//EDADES Y PROMEDIO DE EDAD DE USUARIOS - USUARIOS SITIO WEB DE CERVECERIA QUILMES//
 
 const USUARIO_UNO = parseInt(prompt("Ingresar año de nacimiento del primer usuario"));
 const USUARIO_DOS = parseInt(prompt("Ingresar año de nacimiento del segundo usuario"));
@@ -31,17 +31,17 @@ alert ("USTED NO PUEDE ACCEDER AL SITIO WEB");}
 else{
 alert ("USTED PUEDE ACCEDER AL SITIO WEB");}
 const EDAD_DOS = ANIO_ACTUAL - USUARIO_DOS
-if (EDAD_UNO <18) {
+if (EDAD_DOS <18) {
 alert ("USTED NO PUEDE ACCEDER AL SITIO WEB");}
     else{
 alert ("USTED PUEDE ACCEDER AL SITIO WEB");}
 const EDAD_TRES = ANIO_ACTUAL - USUARIO_TRES
-if (EDAD_UNO <18) {
+if (EDAD_TRES <18) {
 alert ("USTED NO PUEDE ACCEDER AL SITIO WEB");}
     else{
 alert ("USTED PUEDE ACCEDER AL SITIO WEB");}
 const EDAD_CUATRO = ANIO_ACTUAL - USUARIO_CUATRO
-if (EDAD_UNO <18) {
+if (EDAD_CUATRO <18) {
 alert ("USTED NO PUEDE ACCEDER AL SITIO WEB");}
     else{
 alert ("USTED PUEDE ACCEDER AL SITIO WEB");}
