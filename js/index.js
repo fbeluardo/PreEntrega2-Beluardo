@@ -55,23 +55,21 @@ SUMATORIA = EDAD_UNO + EDAD_DOS + EDAD_TRES + EDAD_CUATRO
 PROMEDIO = SUMATORIA / 4
 alert (PROMEDIO)
 
-// FALTARIA AGREGAR LAS SIGUIENTES SENTENCIAS: FUNCTION, FOR //
-//================FUNCIÓN CON RETURN================
+function sumarEdades(EDAD_UNO, EDAD_DOS, EDAD_TRES, EDAD_CUATRO) {
+    let sumatoria = EDAD_UNO + EDAD_DOS + EDAD_TRES + EDAD_CUATRO;
+    return sumatoria;
+}
+function mostrarPromedio() {
+    let resultadoSumatoria = sumarEdades(EDAD_UNO, EDAD_DOS, EDAD_TRES, EDAD_CUATRO);
+    let promedio = resultadoSumatoria / 4;
+    alert("El promedio es: " + promedio);
+    }
+    mostrarPromedio();
 
-// function sumarCalificaciones(
-//   calificacionUno,
-//   calificacionDos,
-//   calificacionTres
-// ) {
-//   let sumatoria = calificacionUno + calificacionDos + calificacionTres;
-//   return sumatoria;
-// }
-// function mostrarPromedio() {
-//   let resultadoSumatoria = sumarCalificaciones(10, 8, 9);
-//   let promedio = resultadoSumatoria / 3;
-//   alert("El promedio es: " + promedio);
-// }
-// mostrarPromedio();
+// FALTARIA AGREGAR LAS SIGUIENTES SENTENCIAS: FOR //
+
+
+
 
 
 
