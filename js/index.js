@@ -70,6 +70,17 @@ function mostrarPromedio() {
     }
     mostrarPromedio();
 
+// let suma = 0;
+
+// for (let i = 0; i < 4; i++) { 
+//     const anioDeNacimiento = parseInt(prompt("Ingresar año de nacimiento del usuario " + (i+1)));
+//     const edad = 2023 - anioDeNacimiento;
+//     suma += edad; 
+// }
+
+// const promedio = suma / 4;
+// alert("El promedio de las 4 edades es de " + promedio)
+
 
 
 
