@@ -51,6 +51,10 @@ alert (EDAD_DOS)
 alert (EDAD_TRES)
 alert (EDAD_CUATRO)
 
+//for (let index = 1; index <= 4; index++) {
+//alert (index)
+//}
+
 SUMATORIA = EDAD_UNO + EDAD_DOS + EDAD_TRES + EDAD_CUATRO
 PROMEDIO = SUMATORIA / 4
 alert (PROMEDIO)
@@ -66,7 +70,7 @@ function mostrarPromedio() {
     }
     mostrarPromedio();
 
-// FALTARIA AGREGAR LAS SIGUIENTES SENTENCIAS: FOR //
+
 
 
 
