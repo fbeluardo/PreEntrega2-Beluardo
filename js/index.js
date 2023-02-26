@@ -17,18 +17,34 @@
 //     console.log (DESCUENTO)
 // }
 
-//EDADES Y PROMEDIO DE EDAD DE USUARIOS REGISTRADOS//
+//EDADES Y PROMEDIO DE EDAD DE USUARIOS//
 
-const USUARIO_UNO = prompt("Ingresar año de nacimiento del primer usuario registrado");
-const USUARIO_DOS = prompt("Ingresar año de nacimiento del segundo usuario registrado");
-const USUARIO_TRES = prompt("Ingresar año de nacimiento del tercer usuario registrado");
-const USUARIO_CUATRO = prompt("Ingresar año de nacimiento del cuarto usuario registrado");
+const USUARIO_UNO = parseInt(prompt("Ingresar año de nacimiento del primer usuario"));
+const USUARIO_DOS = parseInt(prompt("Ingresar año de nacimiento del segundo usuario"));
+const USUARIO_TRES = parseInt(prompt("Ingresar año de nacimiento del tercer usuario"));
+const USUARIO_CUATRO = parseInt(prompt("Ingresar año de nacimiento del cuarto usuario"));
 const ANIO_ACTUAL = 2023
 
 const EDAD_UNO = ANIO_ACTUAL - USUARIO_UNO
+if (EDAD_UNO <18) {
+alert ("USTED NO PUEDE ACCEDER AL SITIO WEB");}
+else{
+alert ("USTED PUEDE ACCEDER AL SITIO WEB");}
 const EDAD_DOS = ANIO_ACTUAL - USUARIO_DOS
+if (EDAD_UNO <18) {
+alert ("USTED NO PUEDE ACCEDER AL SITIO WEB");}
+    else{
+alert ("USTED PUEDE ACCEDER AL SITIO WEB");}
 const EDAD_TRES = ANIO_ACTUAL - USUARIO_TRES
+if (EDAD_UNO <18) {
+alert ("USTED NO PUEDE ACCEDER AL SITIO WEB");}
+    else{
+alert ("USTED PUEDE ACCEDER AL SITIO WEB");}
 const EDAD_CUATRO = ANIO_ACTUAL - USUARIO_CUATRO
+if (EDAD_UNO <18) {
+alert ("USTED NO PUEDE ACCEDER AL SITIO WEB");}
+    else{
+alert ("USTED PUEDE ACCEDER AL SITIO WEB");}
 
 alert (EDAD_UNO)
 alert (EDAD_DOS)
@@ -39,7 +55,7 @@ SUMATORIA = EDAD_UNO + EDAD_DOS + EDAD_TRES + EDAD_CUATRO
 PROMEDIO = SUMATORIA / 4
 alert (PROMEDIO)
 
-// FALTARIA AGREGAR LAS SIGUIENTES SENTENCIAS: IF, ELSE, FUNCTION, FOR //
+// FALTARIA AGREGAR LAS SIGUIENTES SENTENCIAS: FUNCTION, FOR //
 
 
 
