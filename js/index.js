@@ -56,6 +56,22 @@ PROMEDIO = SUMATORIA / 4
 alert (PROMEDIO)
 
 // FALTARIA AGREGAR LAS SIGUIENTES SENTENCIAS: FUNCTION, FOR //
+//================FUNCIÓN CON RETURN================
+
+// function sumarCalificaciones(
+//   calificacionUno,
+//   calificacionDos,
+//   calificacionTres
+// ) {
+//   let sumatoria = calificacionUno + calificacionDos + calificacionTres;
+//   return sumatoria;
+// }
+// function mostrarPromedio() {
+//   let resultadoSumatoria = sumarCalificaciones(10, 8, 9);
+//   let promedio = resultadoSumatoria / 3;
+//   alert("El promedio es: " + promedio);
+// }
+// mostrarPromedio();
 
 
 
