@@ -56,7 +56,7 @@ alert (EDAD_CUATRO)
 //}
 
 SUMATORIA = EDAD_UNO + EDAD_DOS + EDAD_TRES + EDAD_CUATRO
-PROMEDIO = SUMATORIA / 4
+PROMEDIO = parseInt(SUMATORIA / 4)
 alert (PROMEDIO)
 
 function sumarEdades(EDAD_UNO, EDAD_DOS, EDAD_TRES, EDAD_CUATRO) {
@@ -65,7 +65,7 @@ function sumarEdades(EDAD_UNO, EDAD_DOS, EDAD_TRES, EDAD_CUATRO) {
 }
 function mostrarPromedio() {
     let resultadoSumatoria = sumarEdades(EDAD_UNO, EDAD_DOS, EDAD_TRES, EDAD_CUATRO);
-    let promedio = resultadoSumatoria / 4;
+    let promedio = parseInt(resultadoSumatoria / 4);
     alert("El promedio es: " + promedio);
     }
     mostrarPromedio();
