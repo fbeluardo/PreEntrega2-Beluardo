@@ -1,4 +1,4 @@
-//PRECIO FINAL CON IVA Y CON DESCUENTO EN PESOS ARGENTINOS//
+// EJEMPLO N° 1 - PRECIO FINAL CON IVA Y CON DESCUENTO EN PESOS ARGENTINOS//
 // const VALOR_IVA = 0.21;
 
 // const PRODUCTO = prompt("Ingresa el nombre del producto");
@@ -17,7 +17,7 @@
 //     console.log (DESCUENTO)
 // }
 
-//EDADES Y PROMEDIO DE EDAD DE USUARIOS - SITIO WEB DE CERVECERIA QUILMES//
+//EJEMPLO N° 2 - EDADES Y PROMEDIO DE EDAD DE USUARIOS - SITIO WEB DE CERVECERIA QUILMES//
 
 let suma = 0;
 
@@ -37,6 +37,8 @@ function saludar (){
     document.write ("Muchas gracias por la visita!")
 }
 saludar ()
+
+
 
 
 
