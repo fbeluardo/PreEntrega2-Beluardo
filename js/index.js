@@ -1,5 +1,5 @@
 
-//EJEMPLO N° 2 - EDADES Y PROMEDIO DE EDAD DE USUARIOS - SITIO WEB DE CERVECERIA QUILMES//
+//EJEMPLO N° 1 - EDADES Y PROMEDIO DE EDAD DE USUARIOS - SITIO WEB DE CERVECERIA QUILMES//
 
 let suma = 0;
 
@@ -14,6 +14,16 @@ for (let i = 0; i < 4; i++) {
 }
 const promedio = parseInt(suma / 4);
 alert("El promedio de las 4 edades es de " + promedio)
+
+function InicioSesionPais () {
+const PAIS = prompt("Ingresa tu país de origen?");
+if (PAIS == "Argentina"){
+alert("Bienvenido!");} 
+else {
+alert("No se le permite el ingreso");
+}
+}
+InicioSesionPais();
 
 function saludar (){
     document.write ("Muchas gracias por la visita!")
