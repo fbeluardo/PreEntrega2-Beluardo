@@ -16,8 +16,8 @@ const promedio = parseInt(suma / 4);
 alert("El promedio de las 4 edades es de " + promedio)
 
 function paisOrigen () {
-const PAIS = prompt("Ingrese su país de origen");
-if (PAIS == "Argentina"){
+const PAIS = prompt("Ingrese su país de origen").toUpperCase()
+if (PAIS == "ARGENTINA"){
 alert("Bienvenido!");} 
 else {
 alert("No se le permite el ingreso");
