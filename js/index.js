@@ -12,7 +12,7 @@ for (let i = 0; i < 4; i++) {
     else{
         alert ("Usted puede acceder al Sitio Web");}
 }
-const promedio = parseInt(suma / 4);
+const promedio = parseFloat(suma / 4);
 alert("El promedio de las 4 edades es de " + promedio)
 
 function paisOrigen () {
@@ -28,6 +28,7 @@ paisOrigen();
 function saludar (){
     document.write ("Muchas gracias por la visita!")
 }
+
 saludar ()
 
 
