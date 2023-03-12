@@ -26,12 +26,25 @@ class Empleado {
     cargoEmpleado,
     salarioNeto,
     antiguedadAnios);
-    empleados.push(ingresoEmpleados);}
+    empleados.push(ingresoEmpleados);
+  }
+    return (empleados)
     }
-    ingresoEmpleados()
     
-    function promedioSalarioEmpleados (empleados) 
-    let 
+    
+    function promedioSalarioEmpleados(empleados) {
+      const sumaSalarios = empleados.reduce((total, empleado) => total + empleado.salarioNeto, 0);
+      const promedioSalarios = parseFloat(sumaSalarios / empleados.length);
+      return promedioSalarios;
+    }
+
+    let empleados = ingresoEmpleados();
+    let promedioSalarios = promedioSalarioEmpleados(empleados);
+    console.log(`El promedio de salarios de los empleados es ${promedioSalarios}`);
+
+
+    // FALTARIA AGREGAR PROMEDIO DE EDAD DE ANTIGUEDAD, PROMEDIO DE SALARIO DE EMPLEADOS, FILTRO DE EMPLEADOS CON MEJOR SALARIO//
+
  
 
 
