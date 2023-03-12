@@ -1,4 +1,4 @@
-// EMPLEADOS DE LA CERVECERIA - TOTAL DE EMPLEADOS DE LA EMPRESA
+// EMPLEADOS DE LA CERVECERIA - PROMEDIO DE SALARIO DE LOS EMPLEADOS Y FILTRADO DE LOS EMPLEADOS Q REUNEN LA CONDICION GERENTE//
 
 class Empleado {
    constructor(nombreEmpleado, edadEmpleado, cargoEmpleado, salarioNeto, antiguedadAnios) {
@@ -17,7 +17,7 @@ class Empleado {
     for (let index = 0; index < numeroEmpleados; index++) {
     let nombreEmpleado = prompt("Ingrese su nombre completo");
     let edadEmpleado = prompt("Ingrese su edad");
-    let cargoEmpleado = prompt("Ingrese su cargo en la Cerveceria Bariloche");
+    let cargoEmpleado = prompt("Ingrese su cargo en la Cerveceria Bariloche").toUpperCase();
     let salarioNeto = prompt("Ingrese su salario neto en la Cerveceria Bariloche");
     let antiguedadAnios = prompt("Ingrese su antigüedad en la Cerveceria Bariloche");
     let ingresoEmpleados = new Empleado(
@@ -30,20 +30,18 @@ class Empleado {
   }
     return (empleados)
     }
-    
-    
+
     function promedioSalarioEmpleados(empleados) {
-      const sumaSalarios = empleados.reduce((total, empleado) => total + empleado.salarioNeto, 0);
-      const promedioSalarios = parseFloat(sumaSalarios / empleados.length);
+      const salarios = empleados.map((empleado) => parseFloat(empleado.salarioNeto)).filter((salario) => !isNaN(salario));
+      const totalSalarios = salarios.reduce((total, salario) => total + salario, 0);
+      const promedioSalarios = totalSalarios / salarios.length;
       return promedioSalarios;
     }
-
     let empleados = ingresoEmpleados();
     let promedioSalarios = promedioSalarioEmpleados(empleados);
     console.log(`El promedio de salarios de los empleados es ${promedioSalarios}`);
 
-  
-    let cargoFiltrado = prompt("Ingrese el cargo jerarquico de empleado a filtrar");
+    let cargoFiltrado = prompt("Ingrese el cargo jerarquico de empleado a filtrar").toUpperCase();
     let empleadosFiltrados = empleados.filter(empleado => empleado.cargoEmpleado === cargoFiltrado);
     console.log(`Los empleados con el cargo ${cargoFiltrado} son: ${empleadosFiltrados.map(empleado => empleado.nombreEmpleado).join(", ")}`);
 
