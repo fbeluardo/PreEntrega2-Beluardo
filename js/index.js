@@ -42,27 +42,16 @@ class Empleado {
     let promedioSalarios = promedioSalarioEmpleados(empleados);
     console.log(`El promedio de salarios de los empleados es ${promedioSalarios}`);
 
+  
+    let cargoFiltrado = prompt("Ingrese el cargo jerarquico de empleado a filtrar");
+    let empleadosFiltrados = empleados.filter(empleado => empleado.cargoEmpleado === cargoFiltrado);
+    console.log(`Los empleados con el cargo ${cargoFiltrado} son: ${empleadosFiltrados.map(empleado => empleado.nombreEmpleado).join(", ")}`);
 
-    // FALTARIA AGREGAR PROMEDIO DE EDAD DE ANTIGUEDAD, PROMEDIO DE SALARIO DE EMPLEADOS, FILTRO DE EMPLEADOS CON MEJOR SALARIO//
+    // function saludar (){
+    // document.write ("El número de empleados de la empresa es !")
+    // }
+    
+   
+    
 
- 
 
-
- 
-//  function calcularCosto(productos) {
-//    let sumatoriaCosto = 0;
-//    for (const producto of productos) {
-//      sumatoriaCosto += producto.calcularCosto();
-//    }
-//    return sumatoriaCosto;
-//  }
- 
-//  function main() {
-//    let productos = agregarProductos();
-//    mostrarProductos(productos);
-//    let costoAlmacen = calcularCosto(productos);
-//    alert("El costo total del almacén es: " + costoAlmacen);
-//  }
- 
-//  main();
- 
