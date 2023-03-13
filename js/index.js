@@ -30,6 +30,7 @@ class Empleado {
   }
     return (empleados)
     }
+    
 
     function promedioSalarioEmpleados(empleados) {
       const salarios = empleados.map((empleado) => parseFloat(empleado.salarioNeto)).filter((salario) => !isNaN(salario));
@@ -45,11 +46,8 @@ class Empleado {
     let empleadosFiltrados = empleados.filter(empleado => empleado.cargoEmpleado === cargoFiltrado);
     console.log(`Los empleados con el cargo ${cargoFiltrado} son: ${empleadosFiltrados.map(empleado => empleado.nombreEmpleado).join(", ")}`);
 
-    // function saludar (){
-    // document.write ("El número de empleados de la empresa es !")
-    // }
     
    
-    
+
 
 
