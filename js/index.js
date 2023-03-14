@@ -1,4 +1,4 @@
-// EMPLEADOS DE LA CERVECERIA - PROMEDIO DE SALARIO DE LOS EMPLEADOS Y FILTRADO DE LOS EMPLEADOS Q REUNEN LA CONDICION GERENTE//
+// EMPLEADOS DE LA CERVECERIA - PROMEDIO DE SALARIO DE LOS EMPLEADOS Y FILTRADO DE LA PERSONAS Q REUNEN UNA CONDICION O CARGO ESPECIFICO//
 
 class Empleado {
    constructor(nombreEmpleado, edadEmpleado, cargoEmpleado, salarioNeto, antiguedadAnios) {
@@ -30,8 +30,6 @@ class Empleado {
   }
     return (empleados)
     }
-    
-
     function promedioSalarioEmpleados(empleados) {
       const salarios = empleados.map((empleado) => parseFloat(empleado.salarioNeto)).filter((salario) => !isNaN(salario));
       const totalSalarios = salarios.reduce((total, salario) => total + salario, 0);
@@ -45,11 +43,11 @@ class Empleado {
     let cargoFiltrado = prompt("Ingrese el cargo jerarquico de empleado a filtrar").toUpperCase();
     let empleadosFiltrados = empleados.filter(empleado => empleado.cargoEmpleado === cargoFiltrado);
     console.log(`Los empleados con el cargo ${cargoFiltrado} son: ${empleadosFiltrados.map(empleado => empleado.nombreEmpleado).join(", ")}`);
+    let cargoExiste = empleados.some ((elemento)=> elemento.cargoEmpleado === "GERENTE")
+    console.log(cargoExiste)
+   
 
-    
 
-// HACER ALGUN EJEMPLO UTILIZANDO EL SORT O EL SOME DE LA CLASE NRO 7 //
-// USAR ALERT//
    
 
 
