@@ -13,7 +13,7 @@ class Empleado {
     let numeroEmpleados = parseInt (
       prompt ("Cuantos empleados tiene la empresa?")
     )
-    let empleados = [];
+    const empleados = [];
     for (let index = 0; index < numeroEmpleados; index++) {
     let nombreEmpleado = prompt("Ingrese su nombre completo");
     let edadEmpleado = prompt("Ingrese su edad");
@@ -36,7 +36,7 @@ class Empleado {
       const promedioSalarios = totalSalarios / salarios.length;
       return promedioSalarios;
     }
-    let empleados = ingresoEmpleados();
+    const empleados = ingresoEmpleados();
     let promedioSalarios = promedioSalarioEmpleados(empleados);
     console.log(`El promedio de salarios de los empleados es ${promedioSalarios.toFixed(2)}`);
 
