@@ -40,7 +40,7 @@ class Empleado {
     }
     let empleados = ingresoEmpleados();
     let promedioSalarios = promedioSalarioEmpleados(empleados);
-    console.log(`El promedio de salarios de los empleados es ${promedioSalarios}`);
+    console.log(`El promedio de salarios de los empleados es ${promedioSalarios.toFixed(2)}`);
 
     let cargoFiltrado = prompt("Ingrese el cargo jerarquico de empleado a filtrar").toUpperCase();
     let empleadosFiltrados = empleados.filter(empleado => empleado.cargoEmpleado === cargoFiltrado);
