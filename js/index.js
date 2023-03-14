@@ -1,5 +1,3 @@
-// EMPLEADOS DE LA CERVECERIA - PROMEDIO DE SALARIO DE LOS EMPLEADOS Y FILTRADO DE LA PERSONAS Q REUNEN UNA CONDICION O CARGO ESPECIFICO//
-
 // DECLARACIÓN DE CLASE EMPLEADO //
 class Empleado {
    constructor(nombreEmpleado, edadEmpleado, cargoEmpleado, salarioNeto, antiguedadAnios) {
