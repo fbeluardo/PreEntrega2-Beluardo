@@ -47,6 +47,9 @@ class Empleado {
     console.log(`Los empleados con el cargo ${cargoFiltrado} son: ${empleadosFiltrados.map(empleado => empleado.nombreEmpleado).join(", ")}`);
 
     
+
+// HACER ALGUN EJEMPLO UTILIZANDO EL SORT O EL SOME DE LA CLASE NRO 7 //
+// USAR ALERT//
    
 
 
