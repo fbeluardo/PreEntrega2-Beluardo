@@ -16,10 +16,19 @@ class Empleado {
     const empleados = [];
     for (let index = 0; index < numeroEmpleados; index++) {
     let nombreEmpleado = prompt("Ingrese su nombre completo");
-    let edadEmpleado = prompt("Ingrese su edad");
+    let edadEmpleado = parseFloat(prompt("Ingrese su edad"));
+    while (isNaN(edadEmpleado)) {
+      edadEmpleado = parseFloat(prompt("La edad debe ser un número. Por favor ingrese su edad"));
+    }
     let cargoEmpleado = prompt("Ingrese su cargo en la Cerveceria Bariloche").toUpperCase();
-    let salarioNeto = prompt("Ingrese su salario neto en la Cerveceria Bariloche");
-    let antiguedadAnios = prompt("Ingrese su antigüedad en la Cerveceria Bariloche");
+    let salarioNeto = parseFloat(prompt("Ingrese su salario neto en la Cerveceria Bariloche"));
+    while (isNaN(salarioNeto)) {
+      salarioNeto = parseFloat(prompt("El salario neto debe ser un número. Por favor ingrese su salario neto"));
+    }
+    let antiguedadAnios = parseFloat(prompt("Ingrese su antigüedad en la Cerveceria Bariloche"));
+    while (isNaN(antiguedadAnios)) {
+      antiguedadAnios = parseFloat(prompt("La antigüedad debe ser un número. Por favor ingrese su antigüedad en la empresa"));
+    }
     let ingresoEmpleados = new Empleado(
     nombreEmpleado,
     edadEmpleado,
