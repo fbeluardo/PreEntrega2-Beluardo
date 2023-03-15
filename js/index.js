@@ -49,10 +49,10 @@ class Empleado {
     const empleados = ingresoEmpleados();
     let promedioSalarios = promedioSalarioEmpleados(empleados);
     console.log(`El promedio de salarios de los empleados es ${promedioSalarios.toFixed(2)}`);
-    // FILTER DEL CARGO DEL EMPLEADO EN BASE A LOS DATOS INGRESADOS POR PROMPT //
+    // FILTER DEL CARGO JERARQUICO EN BASE A LOS DATOS INGRESADOS POR PROMPT //
     let cargoFiltrado = prompt("Ingrese el cargo jerarquico de empleado a filtrar").toUpperCase();
     let empleadosFiltrados = empleados.filter(empleado => empleado.cargoEmpleado === cargoFiltrado);
-    // USO DEL SOME PARA VALIDAR SI HAY ALGUN CARGO DE EMPLEADO CON ESA CONDICION EN BASE A DATOS INGRESADOS POR PROMPT //
+    // USO DEL SOME PARA VALIDAR SI HAY ALGUN CARGO JERARQUICO CON ESA CONDICION EN BASE A DATOS INGRESADOS POR PROMPT //
     console.log(`Los empleados con el cargo ${cargoFiltrado} son: ${empleadosFiltrados.map(empleado => empleado.nombreEmpleado).join(", ")}`);
     let cargoExiste = empleados.some ((elemento)=> elemento.cargoEmpleado === "GERENTE")
     console.log(cargoExiste)
