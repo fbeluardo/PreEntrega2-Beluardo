@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Yantramanav:100,300");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navegador {
+  background-color: #C4E1E7;
+  padding: 15px;
+  flex-wrap: wrap;
+}
+.navegador > ul {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+  gap: 60px;
+  margin-right: 50px;
+}
+.navegador > ul > li {
+  position: relative;
+}
+.navegador > ul > li:hover + ul {
+  display: block;
+}
+.navegador > ul > li > a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #024059;
+  font: 4px;
+  font-family: "Roboto", sans-serif;
+  font-weight: bolder;
+}
+.navegador > ul > li ul {
+  display: none;
+  position: absolute;
+  list-style-type: none;
+  right: 10px;
+  background-color: #C4E1E7;
+  }

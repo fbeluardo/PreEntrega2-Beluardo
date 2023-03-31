@@ -1,65 +1,78 @@
-// DECLARACIÓN DE CLASE EMPLEADO //
-class Empleado {
-   constructor(nombreEmpleado, edadEmpleado, cargoEmpleado, salarioNeto, antiguedadAnios) {
-     this.nombreEmpleado = nombreEmpleado;
-     this.edadEmpleado = edadEmpleado;
-     this.cargoEmpleado = cargoEmpleado;
-     this.salarioNeto = salarioNeto;
-     this.antiguedadAnios = antiguedadAnios;
-   }
+// Create an empty cart object
+let cart = [];
+
+// Check if there are any items in local storage
+if (localStorage.getItem('cart')) {
+  // If there are, parse the JSON and set the cart object to the parsed data
+  cart = JSON.parse(localStorage.getItem('cart'));
+}
+
+// Function to add an item to the cart
+function addItem(item) {
+  // Check if the item is already in the cart
+  let found = false;
+  for (let i = 0; i < cart.length; i++) {
+    if (cart[i].id === item.id) {
+      cart[i].quantity++;
+      found = true;
+      break;
+    }
   }
-  // FUNCIÓN INGRESO DE DATOS DE LA EMPRESA - ARMADO OBJETO Y ARRAY MEDIANTE EL INGRESO DE DATOS POR PROMPT //
-  function ingresoEmpleados () {
-    let numeroEmpleados = parseInt (
-      prompt ("Cuantos empleados tiene la empresa?")
-    )
-    const empleados = [];
-    for (let index = 0; index < numeroEmpleados; index++) {
-    let nombreEmpleado = prompt("Ingrese su nombre completo");
-    let edadEmpleado = parseFloat(prompt("Ingrese su edad"));
-    while (isNaN(edadEmpleado)) {
-      edadEmpleado = parseFloat(prompt("La edad debe ser un número. Por favor ingrese su edad"));
-    }
-    let cargoEmpleado = prompt("Ingrese su cargo en la Cerveceria Bariloche").toUpperCase();
-    let salarioNeto = parseFloat(prompt("Ingrese su salario neto en la Cerveceria Bariloche"));
-    while (isNaN(salarioNeto)) {
-      salarioNeto = parseFloat(prompt("El salario neto debe ser un número. Por favor ingrese su salario neto"));
-    }
-    let antiguedadAnios = parseFloat(prompt("Ingrese su antigüedad en la Cerveceria Bariloche"));
-    while (isNaN(antiguedadAnios)) {
-      antiguedadAnios = parseFloat(prompt("La antigüedad debe ser un número. Por favor ingrese su antigüedad en la empresa"));
-    }
-    let ingresoEmpleados = new Empleado(
-    nombreEmpleado,
-    edadEmpleado,
-    cargoEmpleado,
-    salarioNeto,
-    antiguedadAnios);
-    empleados.push(ingresoEmpleados);
+  // If the item is not already in the cart, add it
+  if (!found) {
+    item.quantity = 1;
+    cart.push(item);
   }
-    return (empleados)
+  // Save the updated cart to local storage
+  localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+// Function to remove an item from the cart
+function removeItem(id) {
+  // Find the index of the item with the specified ID
+  let index = -1;
+  for (let i = 0; i < cart.length; i++) {
+    if (cart[i].id === id) {
+      index = i;
+      break;
     }
-    // PROMEDIO DE SALARIOS NETOS DE LOS EMPLEADOS DE LA CERVECERIA BARILOCHE EN BASE A LOS DATOS INGRESADOS POR PROMPT //
-    function promedioSalarioEmpleados(empleados) {
-      const salarios = empleados.map((empleado) => parseFloat(empleado.salarioNeto)).filter((salario) => !isNaN(salario));
-      const totalSalarios = salarios.reduce((total, salario) => total + salario, 0);
-      const promedioSalarios = totalSalarios / salarios.length;
-      return promedioSalarios;
-    }
-    const empleados = ingresoEmpleados();
-    let promedioSalarios = promedioSalarioEmpleados(empleados);
-    console.log(`El promedio de salarios de los empleados es ${promedioSalarios.toFixed(2)}`);
-    // FILTER DEL CARGO JERARQUICO EN BASE A LOS DATOS INGRESADOS POR PROMPT //
-    let cargoFiltrado = prompt("Ingrese el cargo jerarquico de empleado a filtrar").toUpperCase();
-    let empleadosFiltrados = empleados.filter(empleado => empleado.cargoEmpleado === cargoFiltrado);
-    // USO DEL SOME PARA VALIDAR SI HAY ALGUN CARGO JERARQUICO CON ESA CONDICION EN BASE A DATOS INGRESADOS POR PROMPT //
-    console.log(`Los empleados con el cargo ${cargoFiltrado} son: ${empleadosFiltrados.map(empleado => empleado.nombreEmpleado).join(", ")}`);
-    let cargoExiste = empleados.some ((elemento)=> elemento.cargoEmpleado === "GERENTE")
-    console.log(cargoExiste)
-   
+  }
+  // If the item was found, remove it from the cart
+  if (index !== -1) {
+    cart.splice(index, 1);
+  }
+  // Save the updated cart to local storage
+  localStorage.setItem('cart', JSON.stringify(cart));
+}
 
+// Function to display the items in the cart
+function displayCart() {
+  // Get a reference to the cart element
+  let cartElement = document.getElementById('cart');
+  // Clear any existing items from the cart
+  cartElement.innerHTML = '';
+  // Loop through each item in the cart and display it
+  for (let i = 0; i < cart.length; i++) {
+    let item = cart[i];
+    let li = document.createElement('li');
+    li.textContent = item.name + ' x ' + item.quantity;
+    let removeButton = document.createElement('button');
+    removeButton.textContent = 'Remove';
+    removeButton.addEventListener('click', function() {
+      removeItem(item.id);
+      displayCart();
+    });
+    li.appendChild(removeButton);
+    cartElement.appendChild(li);
+  }
+}
 
-   
+// Function to clear the cart
+function clearCart() {
+  cart = [];
+  localStorage.removeItem('cart');
+  displayCart();
+}
 
-
-
+// Add an event listener to the Clear Cart button
+document.getElementById('clear-cart')
