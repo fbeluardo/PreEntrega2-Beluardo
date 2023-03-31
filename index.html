@@ -36,30 +36,64 @@
     <header>
       <h1>Carrito Farmacia</h1>
     </header>
-    <main>
-      <div class="product-list">
-        <div class="product-card">
-          <h2>Product 1</h2>
-          <p class="price">$10.00</p>
-          <button class="add-to-cart" data-id="1">Add to Cart</button>
-        </div>
-        <div class="product-card">
-          <h2>Product 2</h2>
-          <p class="price">$15.00</p>
-          <button class="add-to-cart" data-id="2">Add to Cart</button>
-        </div>
-        <div class="product-card">
-          <h2>Product 3</h2>
-          <p class="price">$20.00</p>
-          <button class="add-to-cart" data-id="3">Add to Cart</button>
-        </div>
+    <div class="product-list">
+      <div class="product-card">
+        <h2>Product 1</h2>
+        <img src="./img/482.jpg" alt="Product 1" width="250" height="250">
+        <p class="price">$10.00</p>
+        <button class="add-to-cart" data-id="1">Add to Cart</button>
       </div>
-      <div class="cart">
-        <h2>Cart</h2>
-        <ul class="cart-items"></ul>
-        <p>Total: <span class="cart-total">$0.00</span></p>
-        <button class="clear-cart">Vaciar Carrito</button>
+      <div class="product-card">
+        <h2>Product 2</h2>
+        <img src="./img/476-PhotoRoom.png-PhotoRoom.png" alt="Product 1" width="250" height="250">
+        <p class="price">$15.00</p>
+        <button class="add-to-cart" data-id="2">Add to Cart</button>
       </div>
-    </main>
+      <div class="product-card">
+        <h2>Product 3</h2>
+        <img src="./img/501-PhotoRoom.png-PhotoRoom.png" alt="Product 1" width="250" height="250">
+        <p class="price">$20.00</p>
+        <button class="add-to-cart" data-id="3">Add to Cart</button>
+      </div>
+    </div>
+    <h1>Cart</h1>
+    <div class="cart">
+      <ul class="cart-items"></ul>
+      <p>Total: <span class="cart-total">$0.00</span></p>
+      <button class="clear-cart">Clear Cart</button>
+    </div>
+    <footer class="w-100 py-4 flex-shrink-0">
+      <div class="container py-4">
+          <div class="row gy-4 gx-5">
+              <div class="col-lg-4 col-md-6">
+                  <h5 class="h1 text-white"></h5>
+                  <p class="small text-muted">Droguería INSA - Droguería de la Patagonia</p>
+                  <p class="small text-muted mb-0">Copyrights. Todos los derechos reservados. <a class="text-primary" href="#"></a></p>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                  <h5 class="text-white mb-3"></h5>
+                  <ul class="list-unstyled text-muted">
+                      <li><a href="#">Inicio</a></li>
+                      <li><a href="#">Nosotros</a></li>
+                      <li><a href="#">Atención al cliente</a></li>
+                      <li><a href="#">FAQ</a></li>
+                  </ul>
+              </div>
+              <div class="col-lg-4 col-md-4 ">
+                  <h5 class="text-white mb-3">Newsletter</h5>
+                  <p class="small text-muted">Regístrese a nuestro Newsletter</p>
+                  <form action="#">
+                      <div class="input-group mb-3">
+                          <input class="form-control" type="text" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2">
+                          <button class="btn btn-primary" id="button-addon2" type="button"><i class="fas fa-paper-plane"></i></button>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+    </section>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script> 
+  <script src="./js/index.js"></script>
   </body>
 </html>
