@@ -1,4 +1,4 @@
-// Define the products
+// DEFINICION DE VARIABLES / INSUMOS ***********************************************************************
 const products = [
   {
     id: 1,
@@ -17,53 +17,53 @@ const products = [
   }
 ];
 
-// Initialize the cart and total
+// INICIALIZAR EL CARRITO **************************************************************************************
 let cart = [];
 let total = 0;
 
-// Select the HTML elements
+// SELECCIONAR LOS ELEMENTOS DE HTML***************************************************************************
 const cartItems = document.querySelector(".cart-items");
 const cartTotal = document.querySelector(".cart-total");
 const clearCartButton = document.querySelector(".clear-cart");
 
-// Function to display the cart items
+// FUNCION PARA DESPLEGAR EL CARRITO **************************************************************************
 function displayCart() {
-  // Clear the cart items list
+  // LIMPIAR EL CARRITO DE PRODUCTOS **************************************************************************
   cartItems.innerHTML = "";
 
-  // Loop through the cart array and create a new li element for each item
+  // RECORRER EL CARRITO Y CREAR UN ELEMENTO LI PARA CADA ARTICULO ********************************************
   cart.forEach(item => {
     const li = document.createElement("li");
     li.innerText = `${item.name} - $${item.price}`;
     cartItems.appendChild(li);
   });
 
-  // Update the total
+  //  ACTUALIZAR EL TOTAL DE PRODUCTOS **********************************************************************
   cartTotal.innerText = `$${total.toFixed(2)}`;
 }
 
-// Function to add an item to the cart
+// FUNCION PARA AGREGAR UN PRODUCTO AL CARRITO **************************************************************
 function addItemToCart(id) {
-  // Find the product with the matching id
+  // UTILIZAR EL FIND PARA ENCONTRAR EL ID ******************************************************************
   const product = products.find(product => product.id === id);
 
-  // Add the product to the cart
+  // AGREGAR EL PRODUCTO AL CARRITO ***************************************************************************
   cart.push(product);
 
-  // Update the total
+  // ACTUALIZAR EL TOTAL **************************************************************************************
   total += product.price;
 
-  // Display the cart items
+  // MOSTRAR LOS ARTICULOS DEL CARRITO ************************************************************************
   displayCart();
 }
 
-// Function to clear the cart
+// FUNCION LIMPIAR EL CARRITO *********************************************************************************
 function clearCart() {
-  // Remove all items from the cart and reset the total
+  // ELIMINAR TODOS LOS ARTICULOS DEL CARRITO Y VOLVER EL TOTAL A 0 *******************************************
   cart = [];
   total = 0;
 
-  // Display the cart items
+  // MOSTRAR LOS ARTICULOS DEL CARRITO ************************************************************************
   displayCart();
 }
 
