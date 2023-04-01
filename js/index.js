@@ -91,7 +91,7 @@ finalizarCompraBoton.addEventListener('click', function() {
   const mensajeConfirmacion = `¡Gracias por su compra! El total de su pedido es de ${total}.`;
   alert(mensajeConfirmacion);
   
-  // RESETEAR EL CARRITO BORRANDO LOS ARTICULOS Y ACTULIZANDO EL TOTAL DEL MONTO A PAGAR A $0,00*************
+  // RESETEAR EL CARRITO BORRANDO LOS ARTICULOS Y ACTUALIZANDO EL TOTAL DEL MONTO A PAGAR A $0,00*************
   const productosCarrito = document.querySelector('.productos-carrito');
   productosCarrito.innerHTML = '';
   document.querySelector('.total-carrito').textContent = '$0.00';

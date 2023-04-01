@@ -132,5 +132,9 @@
     border: none;
     
   }
+  .precio{
+    font-weight: bold;
+    font-family: "Roboto", sans-serif;
+  }
   
   
