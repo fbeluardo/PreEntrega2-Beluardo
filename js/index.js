@@ -7,12 +7,12 @@ const productos = [
   },
   {
     id: 2,
-    nombre: "Alcohol en gel 5000 ml Porta",
+    nombre: "Alcohol 70° 5000 ml Porta",
     precio: 2000
   },
   {
     id: 3,
-    nombre: "Clorexidina con dosificador",
+    nombre: "Alcohol 70° 1000 ml Porta",
     precio: 1000
   }
 ];
@@ -87,9 +87,16 @@ finalizarCompraBoton.addEventListener('click', function() {
   // OBTENER LA CANTIDAD TOTAL DE COMPRA *********************************************************************
   const total = document.querySelector('.total-carrito').textContent;
   
-  // MOSTRAR AL USUARIO UN MENSAJE CON EL TOTAL DEL MONTO A PAGAR ********************************************
-  const mensajeConfirmacion = `¡Gracias por su compra! El total de su pedido es de ${total}.`;
-  alert(mensajeConfirmacion);
+  // MOSTRAR AL USUARIO UN MENSAJE CON EL TOTAL DEL MONTO A PAGAR CON SWEET ALERT ****************************
+  const mensajeConfirmacion = `El total de su pedido es de ${total}.`;
+
+Swal.fire({
+  title: '¡Gracias por su compra!',
+  text: mensajeConfirmacion,
+  icon: 'success'
+});
+
+
   
   // RESETEAR EL CARRITO BORRANDO LOS ARTICULOS Y ACTUALIZANDO EL TOTAL DEL MONTO A PAGAR A $0,00*************
   const productosCarrito = document.querySelector('.productos-carrito');
