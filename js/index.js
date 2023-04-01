@@ -1,80 +1,80 @@
 // DEFINICION DE VARIABLES / INSUMOS *************************************************************************
-const products = [
+const productos = [
   {
     id: 1,
-    name: "Product 1",
-    price: 10
+    nombre: "Alcohol 96° 1000 ml Porta",
+    precio: 200
   },
   {
     id: 2,
-    name: "Product 2",
-    price: 15
+    nombre: "Alcohol en gel 5000 ml Porta",
+    precio: 2000
   },
   {
     id: 3,
-    name: "Product 3",
-    price: 20
+    nombre: "Clorexidina con dosificador",
+    precio: 1000
   }
 ];
 
 // INICIALIZACIÓN DE LA VARIABLE CARRITO Y TOTAL****************************************************************
-let cart = [];
+let carrito = [];
 let total = 0;
 
 // SELECCIÓN DE LOS ELEMENTOS DE HTML***************************************************************************
-const cartItems = document.querySelector(".cart-items");
-const cartTotal = document.querySelector(".cart-total");
-const clearCartButton = document.querySelector(".clear-cart");
+const productosCarrito = document.querySelector(".productos-carrito");
+const totalCarrito = document.querySelector(".total-carrito");
+const limpiarCarrito = document.querySelector(".limpiar-carrito");
 
 // FUNCION PARA DESPLEGAR EL CARRITO **************************************************************************
-function displayCart() {
+function mostrarCarrito() {
   // LIMPIAR EL CARRITO DE PRODUCTOS **************************************************************************
-  cartItems.innerHTML = "";
+  productosCarrito.innerHTML = "";
 
   // RECORRER EL CARRITO Y CREAR UN ELEMENTO LI PARA CADA ARTICULO ********************************************
-  cart.forEach(item => {
+  carrito.forEach(producto => {
     const li = document.createElement("li");
-    li.innerText = `${item.name} - $${item.price}`;
-    cartItems.appendChild(li);
+    li.innerText = `${producto.nombre} - $${producto.precio}`;
+    productosCarrito.appendChild(li);
   });
 
   //  ACTUALIZAR EL TOTAL DE PRODUCTOS ************************************************************************
-  cartTotal.innerText = `$${total.toFixed(2)}`;
+  totalCarrito.innerText = `$${total.toFixed(2)}`;
 }
 
 // FUNCION PARA AGREGAR UN PRODUCTO AL CARRITO ****************************************************************
-function addItemToCart(id) {
+function agregarProductoCarrito(id) {
   // UTILIZAR EL FIND PARA ENCONTRAR EL ID ********************************************************************
-  const product = products.find(product => product.id === id);
+  const producto = productos.find(producto => producto.id === id);
 
   // AGREGAR EL PRODUCTO AL CARRITO ***************************************************************************
-  cart.push(product);
+  carrito.push(producto);
 
   // ACTUALIZAR EL TOTAL **************************************************************************************
-  total += product.price;
+  total += producto.precio;
 
   // MOSTRAR LOS ARTICULOS DEL CARRITO ************************************************************************
-  displayCart();
+  mostrarCarrito();
 }
 
 // FUNCION LIMPIAR EL CARRITO *********************************************************************************
-function clearCart() {
+function limpiarCarrito() {
   // ELIMINAR TODOS LOS ARTICULOS DEL CARRITO Y VOLVER EL TOTAL A 0 *******************************************
-  cart = [];
+  carrito = [];
   total = 0;
 
   // MOSTRAR LOS ARTICULOS DEL CARRITO ************************************************************************
-  displayCart();
+  mostrarCarrito();
 }
 
 // AGREGAR EVENT LISTENERS AL BOTON AGREGAR PRODUCTO **********************************************************
-const addToCartButtons = document.querySelectorAll(".add-to-cart");
-addToCartButtons.forEach(button => {
-  button.addEventListener("click", event => {
+const botonAgregaralCarrito = document.querySelectorAll(".agregar-carrito");
+botonAgregaralCarrito.forEach(boton => {
+  boton.addEventListener("click", event => {
     const id = parseInt(event.target.dataset.id);
-    addItemToCart(id);
+    agregarProductoCarrito(id);
   });
 });
 
 // AGREGAR EVENT LISTENER AL BOTON LIMPIAR CARRITO ***********************************************************
-clearCartButton.addEventListener("click", clearCart);
+limpiarCarrito.addEventListener("click", limpiarCarrito);
