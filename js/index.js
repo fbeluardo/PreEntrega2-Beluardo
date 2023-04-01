@@ -78,3 +78,29 @@ botonAgregarAlCarrito.forEach(boton => {
 
 // AGREGAR EVENT LISTENER AL BOTON LIMPIAR CARRITO ***********************************************************
 botonLimpiarCarrito.addEventListener("click", limpiarCarrito);
+
+// VINCULAR EL BOTON DE FINALIZAR COMPRA CON EL HTML *********************************************************
+const finalizarCompraBoton = document.querySelector('.finalizar_compra');
+
+// AGREGAR UN EVENT LISTENER AL BOTON DE FINALIZAR COMPRA ****************************************************
+finalizarCompraBoton.addEventListener('click', function() {
+  // OBTENER LA CANTIDAD TOTAL DE COMPRA *********************************************************************
+  const total = document.querySelector('.total-carrito').textContent;
+  
+  // MOSTRAR AL USUARIO UN MENSAJE CON EL TOTAL DEL MONTO A PAGAR ********************************************
+  const mensajeConfirmacion = `¡Gracias por su compra! El total de su pedido es de ${total}.`;
+  alert(mensajeConfirmacion);
+  
+  // RESETEAR EL CARRITO BORRANDO LOS ARTICULOS Y ACTULIZANDO EL TOTAL DEL MONTO A PAGAR A $0,00*************
+  const productosCarrito = document.querySelector('.productos-carrito');
+  productosCarrito.innerHTML = '';
+  document.querySelector('.total-carrito').textContent = '$0.00';
+});
+
+
+
+
+
+
+
+
