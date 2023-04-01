@@ -1,4 +1,4 @@
-// DEFINICION DE VARIABLES / INSUMOS ***********************************************************************
+// DEFINICION DE VARIABLES / INSUMOS *************************************************************************
 const products = [
   {
     id: 1,
@@ -17,11 +17,11 @@ const products = [
   }
 ];
 
-// INICIALIZAR EL CARRITO **************************************************************************************
+// INICIALIZACIÓN DE LA VARIABLE CARRITO Y TOTAL****************************************************************
 let cart = [];
 let total = 0;
 
-// SELECCIONAR LOS ELEMENTOS DE HTML***************************************************************************
+// SELECCIÓN DE LOS ELEMENTOS DE HTML***************************************************************************
 const cartItems = document.querySelector(".cart-items");
 const cartTotal = document.querySelector(".cart-total");
 const clearCartButton = document.querySelector(".clear-cart");
@@ -38,13 +38,13 @@ function displayCart() {
     cartItems.appendChild(li);
   });
 
-  //  ACTUALIZAR EL TOTAL DE PRODUCTOS **********************************************************************
+  //  ACTUALIZAR EL TOTAL DE PRODUCTOS ************************************************************************
   cartTotal.innerText = `$${total.toFixed(2)}`;
 }
 
-// FUNCION PARA AGREGAR UN PRODUCTO AL CARRITO **************************************************************
+// FUNCION PARA AGREGAR UN PRODUCTO AL CARRITO ****************************************************************
 function addItemToCart(id) {
-  // UTILIZAR EL FIND PARA ENCONTRAR EL ID ******************************************************************
+  // UTILIZAR EL FIND PARA ENCONTRAR EL ID ********************************************************************
   const product = products.find(product => product.id === id);
 
   // AGREGAR EL PRODUCTO AL CARRITO ***************************************************************************
@@ -67,7 +67,7 @@ function clearCart() {
   displayCart();
 }
 
-// Add event listeners to the add to cart buttons
+// AGREGAR EVENT LISTENERS AL BOTON AGREGAR PRODUCTO **********************************************************
 const addToCartButtons = document.querySelectorAll(".add-to-cart");
 addToCartButtons.forEach(button => {
   button.addEventListener("click", event => {
@@ -76,5 +76,5 @@ addToCartButtons.forEach(button => {
   });
 });
 
-// Add event listener to the clear cart button
+// AGREGAR EVENT LISTENER AL BOTON LIMPIAR CARRITO ***********************************************************
 clearCartButton.addEventListener("click", clearCart);
