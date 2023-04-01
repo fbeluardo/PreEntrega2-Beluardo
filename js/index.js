@@ -24,7 +24,7 @@ let total = 0;
 // SELECCIÓN DE LOS ELEMENTOS DE HTML***************************************************************************
 const productosCarrito = document.querySelector(".productos-carrito");
 const totalCarrito = document.querySelector(".total-carrito");
-const limpiarCarrito = document.querySelector(".limpiar-carrito");
+const botonLimpiarCarrito = document.querySelector(".limpiar-carrito");
 
 // FUNCION PARA DESPLEGAR EL CARRITO **************************************************************************
 function mostrarCarrito() {
@@ -68,8 +68,8 @@ function limpiarCarrito() {
 }
 
 // AGREGAR EVENT LISTENERS AL BOTON AGREGAR PRODUCTO **********************************************************
-const botonAgregaralCarrito = document.querySelectorAll(".agregar-carrito");
-botonAgregaralCarrito.forEach(boton => {
+const botonAgregarAlCarrito = document.querySelectorAll(".agregar-carrito");
+botonAgregarAlCarrito.forEach(boton => {
   boton.addEventListener("click", event => {
     const id = parseInt(event.target.dataset.id);
     agregarProductoCarrito(id);
@@ -77,4 +77,4 @@ botonAgregaralCarrito.forEach(boton => {
 });
 
 // AGREGAR EVENT LISTENER AL BOTON LIMPIAR CARRITO ***********************************************************
-limpiarCarrito.addEventListener("click", limpiarCarrito);
+botonLimpiarCarrito.addEventListener("click", limpiarCarrito);

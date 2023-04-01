@@ -44,7 +44,7 @@
   }
   header {
     background-color: #C4E1E7;
-    color: #024059;
+    color: black;
     text-align: center;
     padding: 1rem;
   }
@@ -62,6 +62,11 @@
     padding: 1rem;
     margin-bottom: 2rem;
     text-align: center;
+  }
+
+  .tarjeta-producto h2 {
+    font-size: small;
+    font-family: Arial, Helvetica, sans-serif;
   }
   
   .carrito {
@@ -97,4 +102,20 @@
   .limpiar-carrito {
     margin-top: 1rem;
   }
+  .agregar-carrito {
+    background-color: #0c124a;
+    color: white;
+    border-radius: 10px;
+    padding: 6px;
+    font-family: "Roboto", sans-serif;
+  }
+  .limpiar-carrito{
+    color: black;
+    background-color: red;
+    border-radius: 10px;
+    padding: 6px;
+    font-family: "Roboto", sans-serif
+    
+  }
+  
   
