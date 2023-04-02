@@ -1,4 +1,4 @@
-// DEFINICION DE VARIABLES / INSUMOS *************************************************************************
+// DEFINICION DE VARIABLES / PRODUCTOS *************************************************************************
 const productos = [
   {
     id: 1,
@@ -39,7 +39,7 @@ function mostrarCarrito() {
   });
 
   //  ACTUALIZAR EL TOTAL DE PRODUCTOS ************************************************************************
-  totalCarrito.innerText = `$${total.toFixed(2)}`;
+  totalCarrito.innerText = `$${total.toFixed(0)}`;
 }
 
 // FUNCION PARA AGREGAR UN PRODUCTO AL CARRITO ****************************************************************
@@ -95,13 +95,11 @@ Swal.fire({
   text: mensajeConfirmacion,
   icon: 'success'
 });
-
-
   
-  // RESETEAR EL CARRITO BORRANDO LOS ARTICULOS Y ACTUALIZANDO EL TOTAL DEL MONTO A PAGAR A $0,00*************
+  // RESETEAR EL CARRITO BORRANDO LOS ARTICULOS Y ACTUALIZANDO EL TOTAL DEL MONTO A PAGAR *********************
   const productosCarrito = document.querySelector('.productos-carrito');
   productosCarrito.innerHTML = '';
-  document.querySelector('.total-carrito').textContent = '$0.00';
+  document.querySelector('.total-carrito').textContent = '$0';
 });
 
 

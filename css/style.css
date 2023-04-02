@@ -71,8 +71,10 @@
   
   .carrito {
     border: 1px solid #ccc;
-    padding: 1rem;
+    padding: 8px;
     margin-top: 2rem;
+    text-align: center;
+  
   }
   
   .carrito h2 {
