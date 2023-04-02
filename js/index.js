@@ -12,7 +12,7 @@ const productos = [
   },
   {
     id: 3,
-    nombre: "Alcohol 70° 1000 ml Porta",
+    nombre: "Alcohol 96° 250 ml Aerosol",
     precio: 1000
   }
 ];
