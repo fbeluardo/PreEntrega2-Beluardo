@@ -26,8 +26,21 @@ const productosCarrito = document.querySelector(".productos-carrito");
 const totalCarrito = document.querySelector(".total-carrito");
 const botonLimpiarCarrito = document.querySelector(".limpiar-carrito");
 
+window.onload = function() {
+  // CARGAR LOS DATOS CARRITO DESDE EL LOCALSTORAGE*************************************************************
+  const articulosCarritoStock = localStorage.getItem('productosCarrito');
+  const articulosCarritoTotalStock = localStorage.getItem('totalCarrito');
+
+  if (articulosCarritoStock) {
+    carrito = JSON.parse(articulosCarritoStock);
+    total = parseFloat(articulosCarritoTotalStock);
+    mostrarCarrito();
+  }
+}
+
 // FUNCION PARA DESPLEGAR EL CARRITO **************************************************************************
 function mostrarCarrito() {
+
   // LIMPIAR EL CARRITO DE PRODUCTOS **************************************************************************
   productosCarrito.innerHTML = "";
 
@@ -40,6 +53,10 @@ function mostrarCarrito() {
 
   //  ACTUALIZAR EL TOTAL DE PRODUCTOS ************************************************************************
   totalCarrito.innerText = `$${total.toFixed(0)}`;
+
+  // GUARDAR LA INFORMACION DEL CARRITO ACTUALIZADA AL LOCALSTORAGE********************************************
+  localStorage.setItem('productosCarrito', JSON.stringify(carrito));
+  localStorage.setItem('totalCarrito', total.toFixed(0));
 }
 
 // FUNCION PARA AGREGAR UN PRODUCTO AL CARRITO ****************************************************************
@@ -49,6 +66,10 @@ function agregarProductoCarrito(id) {
 
   // AGREGAR EL PRODUCTO AL CARRITO ***************************************************************************
   carrito.push(producto);
+
+  // GUARDAR LA INFORMACION ACTUALIZADA AL LOCALSTORAGE********************************************************
+  localStorage.setItem('cartItems', JSON.stringify(carrito));
+  localStorage.setItem('cartTotal', total.toFixed(0));
 
   // ACTUALIZAR EL TOTAL **************************************************************************************
   total += producto.precio;
@@ -65,6 +86,9 @@ function limpiarCarrito() {
 
   // MOSTRAR LOS ARTICULOS DEL CARRITO ************************************************************************
   mostrarCarrito();
+  // BORRAR LA INFORMACION DEL CARRITO EN EL LOCALSTORAGE*****************************************************
+  localStorage.removeItem('productosCarrito');
+  localStorage.removeItem('totalCarrito');
 }
 
 // AGREGAR EVENT LISTENERS AL BOTON AGREGAR PRODUCTO **********************************************************
