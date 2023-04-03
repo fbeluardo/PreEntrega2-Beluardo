@@ -44,7 +44,7 @@ function mostrarCarrito() {
   // LIMPIAR EL CARRITO DE PRODUCTOS **************************************************************************
   productosCarrito.innerHTML = "";
 
-  // RECORRER EL CARRITO Y CREAR UN ELEMENTO LI PARA CADA ARTICULO ********************************************
+  // RECORRER EL CARRITO Y CREAR UN ELEMENTO LI PARA CADA PRODUCTO ********************************************
   carrito.forEach(producto => {
     const li = document.createElement("li");
     li.innerText = `${producto.nombre} - $${producto.precio}`;
@@ -86,7 +86,7 @@ function limpiarCarrito() {
 
   // MOSTRAR LOS ARTICULOS DEL CARRITO ************************************************************************
   mostrarCarrito();
-  // BORRAR LA INFORMACION DEL CARRITO EN EL LOCALSTORAGE*****************************************************
+  // BORRAR LA INFORMACION DEL CARRITO EN EL LOCALSTORAGE******************************************************
   localStorage.removeItem('productosCarrito');
   localStorage.removeItem('totalCarrito');
 }
@@ -120,7 +120,7 @@ Swal.fire({
   icon: 'success'
 });
   
-  // RESETEAR EL CARRITO BORRANDO LOS ARTICULOS Y ACTUALIZANDO EL TOTAL DEL MONTO A PAGAR *********************
+  // RESETEAR EL CARRITO BORRANDO LOS ARTICULOS Y ACTUALIZANDO EL TOTAL DEL MONTO A PAGAR *******************
   const productosCarrito = document.querySelector('.productos-carrito');
   productosCarrito.innerHTML = '';
   document.querySelector('.total-carrito').textContent = '$0';
