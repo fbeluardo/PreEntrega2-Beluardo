@@ -38,16 +38,16 @@ window.onload = function() {
   }
 }
 
-// FUNCION PARA DESPLEGAR EL CARRITO *************************************************************************
+// FUNCION PARA DESPLEGAR EL CARRITO **************************************************************************
 function mostrarCarrito() {
 
-// LIMPIAR EL CARRITO DE PRODUCTOS **************************************************************************
+// LIMPIAR EL CARRITO DE PRODUCTOS ****************************************************************************
 productosCarrito.innerHTML = "";
 
-// CREAR UN OBJETO VACÍO PARA CONTENER EL NÚMERO DE CADA PRODUCTO EN EL CARRITO******************************
+// CREAR UN OBJETO VACÍO PARA CONTENER EL NÚMERO DE CADA PRODUCTO EN EL CARRITO********************************
 const cantidades = {};
 
-// RECORRER EL CARRITO Y ACTUALIZAR LAS CANTIDADES DE CADA PRODUCTO EN EL OBJETO
+// RECORRER EL CARRITO Y ACTUALIZAR LAS CANTIDADES DE CADA PRODUCTO EN EL OBJETO*******************************
 carrito.forEach(producto => {
       if (producto.nombre in cantidades) {
         cantidades[producto.nombre]++;
@@ -56,7 +56,7 @@ carrito.forEach(producto => {
       }
 });
   
-// CREAR UN ELEMENTO LI PARA CADA PRODUCTO EN EL OBJETO Y AGREGARLO AL CARRITO
+// CREAR UN ELEMENTO LI PARA CADA PRODUCTO EN EL OBJETO Y AGREGARLO AL CARRITO*********************************
 for (const nombreProducto in cantidades) {
   const cantidad = cantidades[nombreProducto];
   const precio = productos.find(producto => producto.nombre === nombreProducto).precio;
