@@ -38,7 +38,7 @@ window.onload = function() {
   }
 }
 
-// FUNCION PARA DESPLEGAR EL CARRITO **************************************************************************
+// FUNCION PARA MOSTRAR EL CARRITO **************************************************************************
 function mostrarCarrito() {
 
 // LIMPIAR EL CARRITO DE PRODUCTOS ****************************************************************************
@@ -82,8 +82,8 @@ function agregarProductoCarrito(id) {
   carrito.push(producto);
 
   // GUARDAR LA INFORMACION ACTUALIZADA AL LOCALSTORAGE********************************************************
-  localStorage.setItem('cartItems', JSON.stringify(carrito));
-  localStorage.setItem('cartTotal', total.toFixed(0));
+  localStorage.setItem('productosCarrito', JSON.stringify(carrito));
+  localStorage.setItem('totalCarrito', total.toFixed(0));
 
   // ACTUALIZAR EL TOTAL **************************************************************************************
   total += producto.precio;
@@ -94,7 +94,7 @@ function agregarProductoCarrito(id) {
 
 // FUNCION LIMPIAR EL CARRITO *********************************************************************************
 function limpiarCarrito() {
-  // ELIMINAR TODOS LOS ARTICULOS DEL CARRITO Y VOLVER EL TOTAL A 0 *******************************************
+  // ELIMINAR TODOS LOS ARTICULOS DEL CARRITO Y ACTUALIZAR EL TOTAL A 0 *******************************************
   carrito = [];
   total = 0;
 
