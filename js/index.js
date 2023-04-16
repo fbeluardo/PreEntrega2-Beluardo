@@ -22,23 +22,37 @@ let carrito = [];
 let total = 0;
 
 // IDENTIFICACIÓN DEL USUARIO CON SU NOMBRE ********************************************************************
-let formularioIdentificacion;
-let contenedorIdentificacion;
-let contenedorUsuario;
-let textoUsuario;
 
-function Identificacion(){
-  formularioIdentificacion = document.getElementById(
-    "formularioIdentificacion"
-  );
-  inputUsuario = document.getElementById("inputUsuario");
-  contenedorIdentificacion = document.getElementById(
-    "contenedorIdentificacion"
-  );
-  contenedorUsuario = document.getElementById("contenedorUsuario");
-  textoUsuario = document.getElementById("textoUsuario");
+const formularioIdentificacion = document.getElementById('formularioIdentificacion');
+const inputUsuario = document.getElementById("inputUsuario");
+const contenedorIdentificacion = document.getElementById("contenedorIdentificacion");
+const contenedorUsuario = document.getElementById("contenedorUsuario");
+const textoUsuario = document.getElementById("textoUsuario");
+
+function identificarUsuario(event) {
+  event.preventDefault();
+  usuario = inputUsuario.value;
+  formularioIdentificacion.reset();
+  actualizarUsuarioStorage();
+  mostrarTextoUsuario();
+}
+
+function mostrarTextoUsuario() {
+  contenedorIdentificacion.hidden = true;
+  contenedorUsuario.hidden = false;
+  textoUsuario.innerHTML += ` ${usuario}`;
+}
+
+function mostrarFormularioIdentificacion() {
+  contenedorIdentificacion.hidden = false;
+  contenedorUsuario.hidden = true;
+  textoUsuario.innerHTML = ``;
 }
 formularioIdentificacion.onsubmit = (event) => identificarUsuario(event);
+
+function actualizarUsuarioStorage() {
+  localStorage.setItem("usuario", usuario);
+}
 
 // SELECCIÓN DE LOS ELEMENTOS DE HTML***************************************************************************
 const productosCarrito = document.querySelector(".productos-carrito");
