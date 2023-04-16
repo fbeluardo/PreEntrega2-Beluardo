@@ -21,6 +21,25 @@ const productos = [
 let carrito = [];
 let total = 0;
 
+// IDENTIFICACIÓN DEL USUARIO CON SU NOMBRE ********************************************************************
+let formularioIdentificacion;
+let contenedorIdentificacion;
+let contenedorUsuario;
+let textoUsuario;
+
+function Identificacion(){
+  formularioIdentificacion = document.getElementById(
+    "formularioIdentificacion"
+  );
+  inputUsuario = document.getElementById("inputUsuario");
+  contenedorIdentificacion = document.getElementById(
+    "contenedorIdentificacion"
+  );
+  contenedorUsuario = document.getElementById("contenedorUsuario");
+  textoUsuario = document.getElementById("textoUsuario");
+}
+formularioIdentificacion.onsubmit = (event) => identificarUsuario(event);
+
 // SELECCIÓN DE LOS ELEMENTOS DE HTML***************************************************************************
 const productosCarrito = document.querySelector(".productos-carrito");
 const totalCarrito = document.querySelector(".total-carrito");
