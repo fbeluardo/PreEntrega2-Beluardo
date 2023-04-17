@@ -21,14 +21,14 @@ const productos = [
 let carrito = [];
 let total = 0;
 
-// IDENTIFICACIÓN DEL USUARIO CON SU NOMBRE ********************************************************************
-
+// DECLARACION DE VARIABLES Y OBTENER REFERENCIAS A LOS ELEMENTOS DEL DOM**************************************
 const formularioIdentificacion = document.getElementById('formularioIdentificacion');
 const inputUsuario = document.getElementById("inputUsuario");
 const contenedorIdentificacion = document.getElementById("contenedorIdentificacion");
 const contenedorUsuario = document.getElementById("contenedorUsuario");
 const textoUsuario = document.getElementById("textoUsuario");
 
+// FUNCION PARA MANEJAR EL ENVIO DEL FORMULARIO DE IDENTIFICACION *********************************************
 function identificarUsuario(event) {
   event.preventDefault();
   usuario = inputUsuario.value;
@@ -36,20 +36,21 @@ function identificarUsuario(event) {
   actualizarUsuarioStorage();
   mostrarTextoUsuario();
 }
-
+// FUNCION PARA MOSTRAR LA INFORMACION DEL USUARIO EN EL CARRITO ************************************************
 function mostrarTextoUsuario() {
   contenedorIdentificacion.hidden = true;
   contenedorUsuario.hidden = false;
   textoUsuario.innerHTML += ` ${usuario}`;
 }
-
+// FUNCION PARA MOSTRAR EL FORMULARIO DE IDENTIFICACIÓN EN EL CARRITO ******************************************
 function mostrarFormularioIdentificacion() {
   contenedorIdentificacion.hidden = false;
   contenedorUsuario.hidden = true;
   textoUsuario.innerHTML = ``;
 }
+// ONSUBMIT PARA EL ENVIO DE LA INFORMACIÓN DEL FORMULARIO DE IDENT *******************************************
 formularioIdentificacion.onsubmit = (event) => identificarUsuario(event);
-
+// DEFINIR UNA FUNCIÓN PARA ACTUALIZAR EL ALMACENAMIENTO LOCAL CON LA INFO DEL USUARIO ************************
 function actualizarUsuarioStorage() {
   localStorage.setItem("usuario", usuario);
 }
