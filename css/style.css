@@ -45,8 +45,8 @@
   header {
     background-color: #265b5b;
     color: rgb(255, 255, 255);
-    text-align: center;
-    padding: 1rem;
+    font-family: "Roboto", sans-serif;
+    padding: 20px;
   }
   
   .lista-productos {
@@ -145,6 +145,11 @@
     border-radius: 10px;
     padding: 3px;
   }
-  
+  .nombre
+  {
+    font-size: 12px;
+  }
+ 
+
   
   
