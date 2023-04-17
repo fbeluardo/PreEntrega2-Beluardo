@@ -28,7 +28,7 @@ const contenedorIdentificacion = document.getElementById("contenedorIdentificaci
 const contenedorUsuario = document.getElementById("contenedorUsuario");
 const textoUsuario = document.getElementById("textoUsuario");
 
-// FUNCION PARA MANEJAR EL ENVIO DEL FORMULARIO DE IDENTIFICACION *********************************************
+// FUNCION PARA MANEJAR EL ENVIO DEL FORMULARIO DE IDENTIFICACIÓN *********************************************
 function identificarUsuario(event) {
   event.preventDefault();
   usuario = inputUsuario.value;
@@ -173,11 +173,3 @@ Swal.fire({
   productosCarrito.innerHTML = '';
   document.querySelector('.total-carrito').textContent = '$0';
 });
-
-
-
-
-
-
-
-
