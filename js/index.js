@@ -69,10 +69,12 @@ function mostrarFormularioIdentificacion() {
 }
 // ONSUBMIT PARA EL ENVIO DE LA INFORMACIÓN DEL FORMULARIO DE IDENT *******************************************
 formularioIdentificacion.onsubmit = (event) => identificarUsuario(event);
+
 // DEFINIR UNA FUNCIÓN PARA ACTUALIZAR EL ALMACENAMIENTO LOCAL CON LA INFO DEL USUARIO ************************
 function actualizarUsuarioStorage() {
   localStorage.setItem("usuario", usuario);
 }
+
 // SELECCIÓN DE LOS ELEMENTOS DE HTML***************************************************************************
 const productosCarrito = document.querySelector(".productos-carrito");
 const totalCarrito = document.querySelector(".total-carrito");
@@ -128,34 +130,34 @@ for (const nombreProducto in cantidades) {
 
 // FUNCION PARA AGREGAR UN PRODUCTO AL CARRITO ****************************************************************
 function agregarProductoCarrito(id) {
-  // UTILIZAR EL FIND PARA ENCONTRAR EL ID ********************************************************************
-  const producto = productos.find(producto => producto.id === id);
+// UTILIZAR EL FIND PARA ENCONTRAR EL ID ********************************************************************
+const producto = productos.find(producto => producto.id === id);
 
-  // AGREGAR EL PRODUCTO AL CARRITO ***************************************************************************
-  carrito.push(producto);
+// AGREGAR EL PRODUCTO AL CARRITO ***************************************************************************
+carrito.push(producto);
 
-  // GUARDAR LA INFORMACION ACTUALIZADA AL LOCALSTORAGE********************************************************
-  localStorage.setItem('productosCarrito', JSON.stringify(carrito));
-  localStorage.setItem('totalCarrito', total.toFixed(0));
+// GUARDAR LA INFORMACION ACTUALIZADA AL LOCALSTORAGE********************************************************
+localStorage.setItem('productosCarrito', JSON.stringify(carrito));
+localStorage.setItem('totalCarrito', total.toFixed(0));
 
-  // ACTUALIZAR EL TOTAL **************************************************************************************
-  total += producto.precio;
+// ACTUALIZAR EL TOTAL **************************************************************************************
+total += producto.precio;
 
-  // MOSTRAR LOS ARTICULOS DEL CARRITO ************************************************************************
-  mostrarCarrito();
+// MOSTRAR LOS ARTICULOS DEL CARRITO ************************************************************************
+mostrarCarrito();
 }
 
 // FUNCION LIMPIAR EL CARRITO *********************************************************************************
 function limpiarCarrito() {
-  // ELIMINAR TODOS LOS ARTICULOS DEL CARRITO Y ACTUALIZAR EL TOTAL A 0 *******************************************
-  carrito = [];
-  total = 0;
+// ELIMINAR TODOS LOS ARTICULOS DEL CARRITO Y ACTUALIZAR EL TOTAL A 0 *******************************************
+carrito = [];
+total = 0;
 
-  // MOSTRAR LOS ARTICULOS DEL CARRITO ************************************************************************
-  mostrarCarrito();
-  // BORRAR LA INFORMACION DEL CARRITO EN EL LOCALSTORAGE******************************************************
-  localStorage.removeItem('productosCarrito');
-  localStorage.removeItem('totalCarrito');
+// MOSTRAR LOS ARTICULOS DEL CARRITO ************************************************************************
+mostrarCarrito();
+// BORRAR LA INFORMACION DEL CARRITO EN EL LOCALSTORAGE******************************************************
+localStorage.removeItem('productosCarrito');
+localStorage.removeItem('totalCarrito');
 }
 
 // AGREGAR EVENT LISTENERS AL BOTON AGREGAR PRODUCTO **********************************************************
@@ -175,7 +177,7 @@ const finalizarCompraBoton = document.querySelector('.finalizar_compra');
 
 // AGREGAR UN EVENT LISTENER AL BOTON DE FINALIZAR COMPRA ****************************************************
 finalizarCompraBoton.addEventListener('click', function() {
-  // OBTENER LA CANTIDAD TOTAL DE COMPRA *********************************************************************
+// OBTENER LA CANTIDAD TOTAL DE COMPRA *********************************************************************
   const total = document.querySelector('.total-carrito').textContent;
   
   // MOSTRAR AL USUARIO UN MENSAJE CON EL TOTAL DEL MONTO A PAGAR CON SWEET ALERT ****************************
@@ -192,6 +194,7 @@ Swal.fire({
   productosCarrito.innerHTML = '';
   document.querySelector('.total-carrito').textContent = '$0';
 });
+
 // USO DE FETCH PARA TOMAR PRODUCTOS DE UNA API *************************************************************
 fetch("https://643739730c58d3b1456d5945.mockapi.io//finalproyect")
   .then((response) => response.json())
