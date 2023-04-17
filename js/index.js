@@ -173,3 +173,9 @@ Swal.fire({
   productosCarrito.innerHTML = '';
   document.querySelector('.total-carrito').textContent = '$0';
 });
+// USO DE FETCH PARA TOMAR PRODUCTOS DE UNA API ************************************************************
+fetch("https://643739730c58d3b1456d5945.mockapi.io//finalproyect")
+  .then((response) => response.json())
+  .then((jsonResponse) => {
+    console.log(jsonResponse);
+  })
