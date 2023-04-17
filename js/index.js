@@ -29,19 +29,38 @@ const contenedorUsuario = document.getElementById("contenedorUsuario");
 const textoUsuario = document.getElementById("textoUsuario");
 
 // FUNCION PARA MANEJAR EL ENVIO DEL FORMULARIO DE IDENTIFICACIÓN *********************************************
-function identificarUsuario(event) {
+async function identificarUsuario(event) {
   event.preventDefault();
   usuario = inputUsuario.value;
   formularioIdentificacion.reset();
   actualizarUsuarioStorage();
   mostrarTextoUsuario();
+
+  // MOSTRAR MENSAJE DE TOASTIFY *****************************************************************************
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-right',
+    iconColor: 'white',
+    customClass: {
+      popup: 'colored-toast'
+    },
+    showConfirmButton: false,
+    timer: 1500,
+    timerProgressBar: true
+  })
+  await Toast.fire({
+    icon: 'success',
+    title: 'Identificación exitosa!'
+  })
 }
+
 // FUNCION PARA MOSTRAR LA INFORMACION DEL USUARIO EN EL CARRITO ************************************************
 function mostrarTextoUsuario() {
   contenedorIdentificacion.hidden = true;
   contenedorUsuario.hidden = false;
   textoUsuario.innerHTML += ` ${usuario}`;
 }
+
 // FUNCION PARA MOSTRAR EL FORMULARIO DE IDENTIFICACIÓN EN EL CARRITO ******************************************
 function mostrarFormularioIdentificacion() {
   contenedorIdentificacion.hidden = false;
@@ -54,13 +73,13 @@ formularioIdentificacion.onsubmit = (event) => identificarUsuario(event);
 function actualizarUsuarioStorage() {
   localStorage.setItem("usuario", usuario);
 }
-
 // SELECCIÓN DE LOS ELEMENTOS DE HTML***************************************************************************
 const productosCarrito = document.querySelector(".productos-carrito");
 const totalCarrito = document.querySelector(".total-carrito");
 const botonLimpiarCarrito = document.querySelector(".limpiar-carrito");
 
 window.onload = function() {
+  
   // CARGAR LOS DATOS CARRITO DESDE EL LOCALSTORAGE*************************************************************
   const articulosCarritoStock = localStorage.getItem('productosCarrito');
   const articulosCarritoTotalStock = localStorage.getItem('totalCarrito');
