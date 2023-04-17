@@ -145,14 +145,6 @@
     border-radius: 10px;
     padding: 3px;
   }
-  .form-label
-  {
-    font-size: 16px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-weight: bold;
-    color: black;
-    text-align: center;
-  }
   .form-control
   {
     width: 300px;
@@ -163,12 +155,22 @@
     background-color: #0c124a;
     border: none;
   }
-.titulo{
-  text-align: center;
-}
 .colored-toast.swal2-icon-success {
   background-color: #a5dc86 !important;
 }
-
+.col-md-6
+{
+font-family: 'Open Sans', sans-serif;
+font-weight: bold;
+font-size: 14px;
+}
+.form-label
+{
+font-size: 16px;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+font-weight: bold;
+color: black;
+text-align: center;
+}
   
   
