@@ -1,4 +1,4 @@
-// DEFINICION DE VARIABLES / PRODUCTOS *************************************************************************
+// DEFINICIÓN DE VARIABLES / PRODUCTOS *************************************************************************
 const productos = [
   {
     id: 1,
@@ -17,18 +17,18 @@ const productos = [
   }
 ];
 
-// INICIALIZACIÓN DE LA VARIABLE CARRITO Y TOTAL****************************************************************
+// INICIALIZACIÓN DE LA VARIABLE CARRITO Y TOTAL ***************************************************************
 let carrito = [];
 let total = 0;
 
-// DECLARACION DE VARIABLES Y OBTENER REFERENCIAS A LOS ELEMENTOS DEL DOM**************************************
+// DECLARACIÓN DE VARIABLES Y OBTENER REFERENCIAS A LOS ELEMENTOS DEL DOM *************************************
 const formularioIdentificacion = document.getElementById('formularioIdentificacion');
 const inputUsuario = document.getElementById("inputUsuario");
 const contenedorIdentificacion = document.getElementById("contenedorIdentificacion");
 const contenedorUsuario = document.getElementById("contenedorUsuario");
 const textoUsuario = document.getElementById("textoUsuario");
 
-// FUNCION PARA MANEJAR EL ENVIO DEL FORMULARIO DE IDENTIFICACIÓN *********************************************
+// FUNCIÓN PARA MANEJAR EL ENVÍO DEL FORMULARIO DE IDENTIFICACIÓN *********************************************
 async function identificarUsuario(event) {
   event.preventDefault();
   usuario = inputUsuario.value;
@@ -54,7 +54,7 @@ async function identificarUsuario(event) {
   })
 }
 
-// FUNCION PARA MOSTRAR LA INFORMACION DEL USUARIO EN EL CARRITO ************************************************
+// FUNCIÓN PARA MOSTRAR LA INFORMACIÓN DEL USUARIO EN EL CARRITO ************************************************
 function mostrarTextoUsuario() {
   contenedorIdentificacion.hidden = true;
   contenedorUsuario.hidden = false;
@@ -67,7 +67,7 @@ function mostrarFormularioIdentificacion() {
   contenedorUsuario.hidden = true;
   textoUsuario.innerHTML = ``;
 }
-// ONSUBMIT PARA EL ENVIO DE LA INFORMACIÓN DEL FORMULARIO DE IDENT ********************************************
+// ONSUBMIT PARA EL ENVÍO DE LA INFORMACIÓN DEL FORMULARIO DE IDENTIFICACIÓN **********************************
 formularioIdentificacion.onsubmit = (event) => identificarUsuario(event);
 
 // DEFINIR UNA FUNCIÓN PARA ACTUALIZAR EL ALMACENAMIENTO LOCAL CON LA INFO DEL USUARIO *************************
@@ -93,7 +93,7 @@ window.onload = function() {
   }
 }
 
-// FUNCION PARA MOSTRAR EL CARRITO ******************************************************************************
+// FUNCIÓN PARA MOSTRAR EL CARRITO ******************************************************************************
 function mostrarCarrito() {
 
 // LIMPIAR EL CARRITO DE PRODUCTOS ******************************************************************************
@@ -123,13 +123,14 @@ for (const nombreProducto in cantidades) {
   //  ACTUALIZAR EL TOTAL DE PRODUCTOS **************************************************************************
   totalCarrito.innerText = `$${total.toFixed(0)}`;
 
-  // GUARDAR LA INFORMACION DEL CARRITO ACTUALIZADA AL LOCALSTORAGE**********************************************
+  // GUARDAR LA INFORMACIÓN DEL CARRITO ACTUALIZADA AL LOCALSTORAGE**********************************************
   localStorage.setItem('productosCarrito', JSON.stringify(carrito));
   localStorage.setItem('totalCarrito', total.toFixed(0));
 }
 
 // FUNCION PARA AGREGAR UN PRODUCTO AL CARRITO ******************************************************************
 function agregarProductoCarrito(id) {
+
 // UTILIZAR EL FIND PARA ENCONTRAR EL ID ************************************************************************
 const producto = productos.find(producto => producto.id === id);
 
@@ -147,21 +148,22 @@ total += producto.precio;
 mostrarCarrito();
 }
 
-// FUNCION LIMPIAR EL CARRITO ***********************************************************************************
+// FUNCIÓN LIMPIAR EL CARRITO ***********************************************************************************
 function limpiarCarrito() {
-// ELIMINAR TODOS LOS ARTICULOS DEL CARRITO Y ACTUALIZAR EL TOTAL A 0 *******************************************
+
+// ELIMINAR TODOS LOS ARTÍCULOS DEL CARRITO Y ACTUALIZAR EL TOTAL A 0 *******************************************
 carrito = [];
 total = 0;
 
-// MOSTRAR LOS ARTICULOS DEL CARRITO ****************************************************************************
+// MOSTRAR LOS ARTÍCULOS DEL CARRITO ****************************************************************************
 mostrarCarrito();
 
-// BORRAR LA INFORMACION DEL CARRITO EN EL LOCALSTORAGE**********************************************************
+// BORRAR LA INFORMACIÓN DEL CARRITO EN EL LOCALSTORAGE**********************************************************
 localStorage.removeItem('productosCarrito');
 localStorage.removeItem('totalCarrito');
 }
 
-// AGREGAR EVENT LISTENERS AL BOTON AGREGAR PRODUCTO ***********************************************************
+// AGREGAR EVENT LISTENERS AL BOTÓN AGREGAR PRODUCTO ***********************************************************
 const botonAgregarAlCarrito = document.querySelectorAll(".agregar-carrito");
 botonAgregarAlCarrito.forEach(boton => {
   boton.addEventListener("click", event => {
@@ -176,7 +178,7 @@ botonLimpiarCarrito.addEventListener("click", limpiarCarrito);
 // VINCULAR EL BOTON DE FINALIZAR COMPRA CON EL HTML *********************************************************
 const finalizarCompraBoton = document.querySelector('.finalizar_compra');
 
-// AGREGAR UN EVENT LISTENER AL BOTON DE FINALIZAR COMPRA ****************************************************
+// AGREGAR UN EVENT LISTENER AL BOTÓN DE FINALIZAR COMPRA ****************************************************
 finalizarCompraBoton.addEventListener('click', function() {
 
 // OBTENER LA CANTIDAD TOTAL DE COMPRA ***********************************************************************
@@ -191,7 +193,7 @@ Swal.fire({
   icon: 'success'
 });
   
-  // RESETEAR EL CARRITO BORRANDO LOS ARTICULOS Y ACTUALIZANDO EL TOTAL DEL MONTO A PAGAR *******************
+  // RESETEAR EL CARRITO BORRANDO LOS ARTÍCULOS Y ACTUALIZANDO EL TOTAL DEL MONTO A PAGAR *******************
   const productosCarrito = document.querySelector('.productos-carrito');
   productosCarrito.innerHTML = '';
   document.querySelector('.total-carrito').textContent = '$0';
