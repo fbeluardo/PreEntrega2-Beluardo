@@ -67,10 +67,10 @@ function mostrarFormularioIdentificacion() {
   contenedorUsuario.hidden = true;
   textoUsuario.innerHTML = ``;
 }
-// ONSUBMIT PARA EL ENVIO DE LA INFORMACIÓN DEL FORMULARIO DE IDENT *******************************************
+// ONSUBMIT PARA EL ENVIO DE LA INFORMACIÓN DEL FORMULARIO DE IDENT ********************************************
 formularioIdentificacion.onsubmit = (event) => identificarUsuario(event);
 
-// DEFINIR UNA FUNCIÓN PARA ACTUALIZAR EL ALMACENAMIENTO LOCAL CON LA INFO DEL USUARIO ************************
+// DEFINIR UNA FUNCIÓN PARA ACTUALIZAR EL ALMACENAMIENTO LOCAL CON LA INFO DEL USUARIO *************************
 function actualizarUsuarioStorage() {
   localStorage.setItem("usuario", usuario);
 }
@@ -93,16 +93,16 @@ window.onload = function() {
   }
 }
 
-// FUNCION PARA MOSTRAR EL CARRITO **************************************************************************
+// FUNCION PARA MOSTRAR EL CARRITO ******************************************************************************
 function mostrarCarrito() {
 
-// LIMPIAR EL CARRITO DE PRODUCTOS ****************************************************************************
+// LIMPIAR EL CARRITO DE PRODUCTOS ******************************************************************************
 productosCarrito.innerHTML = "";
 
-// CREAR UN OBJETO VACÍO PARA CONTENER EL NÚMERO DE CADA PRODUCTO EN EL CARRITO********************************
+// CREAR UN OBJETO VACÍO PARA CONTENER EL NÚMERO DE CADA PRODUCTO EN EL CARRITO**********************************
 const cantidades = {};
 
-// RECORRER EL CARRITO Y ACTUALIZAR LAS CANTIDADES DE CADA PRODUCTO EN EL OBJETO*******************************
+// RECORRER EL CARRITO Y ACTUALIZAR LAS CANTIDADES DE CADA PRODUCTO EN EL OBJETO*********************************
 carrito.forEach(producto => {
       if (producto.nombre in cantidades) {
         cantidades[producto.nombre]++;
@@ -111,7 +111,7 @@ carrito.forEach(producto => {
       }
 });
   
-// CREAR UN ELEMENTO LI PARA CADA PRODUCTO EN EL OBJETO Y AGREGARLO AL CARRITO*********************************
+// CREAR UN ELEMENTO LI PARA CADA PRODUCTO EN EL OBJETO Y AGREGARLO AL CARRITO***********************************
 for (const nombreProducto in cantidades) {
   const cantidad = cantidades[nombreProducto];
   const precio = productos.find(producto => producto.nombre === nombreProducto).precio;
@@ -120,47 +120,48 @@ for (const nombreProducto in cantidades) {
   productosCarrito.appendChild(li);
 }
 
-  //  ACTUALIZAR EL TOTAL DE PRODUCTOS ************************************************************************
+  //  ACTUALIZAR EL TOTAL DE PRODUCTOS **************************************************************************
   totalCarrito.innerText = `$${total.toFixed(0)}`;
 
-  // GUARDAR LA INFORMACION DEL CARRITO ACTUALIZADA AL LOCALSTORAGE********************************************
+  // GUARDAR LA INFORMACION DEL CARRITO ACTUALIZADA AL LOCALSTORAGE**********************************************
   localStorage.setItem('productosCarrito', JSON.stringify(carrito));
   localStorage.setItem('totalCarrito', total.toFixed(0));
 }
 
-// FUNCION PARA AGREGAR UN PRODUCTO AL CARRITO ****************************************************************
+// FUNCION PARA AGREGAR UN PRODUCTO AL CARRITO ******************************************************************
 function agregarProductoCarrito(id) {
-// UTILIZAR EL FIND PARA ENCONTRAR EL ID ********************************************************************
+// UTILIZAR EL FIND PARA ENCONTRAR EL ID ************************************************************************
 const producto = productos.find(producto => producto.id === id);
 
-// AGREGAR EL PRODUCTO AL CARRITO ***************************************************************************
+// AGREGAR EL PRODUCTO AL CARRITO *******************************************************************************
 carrito.push(producto);
 
-// GUARDAR LA INFORMACION ACTUALIZADA AL LOCALSTORAGE********************************************************
+// GUARDAR LA INFORMACION ACTUALIZADA AL LOCALSTORAGE************************************************************
 localStorage.setItem('productosCarrito', JSON.stringify(carrito));
 localStorage.setItem('totalCarrito', total.toFixed(0));
 
-// ACTUALIZAR EL TOTAL **************************************************************************************
+// ACTUALIZAR EL TOTAL ******************************************************************************************
 total += producto.precio;
 
-// MOSTRAR LOS ARTICULOS DEL CARRITO ************************************************************************
+// MOSTRAR LOS ARTICULOS DEL CARRITO ****************************************************************************
 mostrarCarrito();
 }
 
-// FUNCION LIMPIAR EL CARRITO *********************************************************************************
+// FUNCION LIMPIAR EL CARRITO ***********************************************************************************
 function limpiarCarrito() {
 // ELIMINAR TODOS LOS ARTICULOS DEL CARRITO Y ACTUALIZAR EL TOTAL A 0 *******************************************
 carrito = [];
 total = 0;
 
-// MOSTRAR LOS ARTICULOS DEL CARRITO ************************************************************************
+// MOSTRAR LOS ARTICULOS DEL CARRITO ****************************************************************************
 mostrarCarrito();
-// BORRAR LA INFORMACION DEL CARRITO EN EL LOCALSTORAGE******************************************************
+
+// BORRAR LA INFORMACION DEL CARRITO EN EL LOCALSTORAGE**********************************************************
 localStorage.removeItem('productosCarrito');
 localStorage.removeItem('totalCarrito');
 }
 
-// AGREGAR EVENT LISTENERS AL BOTON AGREGAR PRODUCTO **********************************************************
+// AGREGAR EVENT LISTENERS AL BOTON AGREGAR PRODUCTO ***********************************************************
 const botonAgregarAlCarrito = document.querySelectorAll(".agregar-carrito");
 botonAgregarAlCarrito.forEach(boton => {
   boton.addEventListener("click", event => {
@@ -177,7 +178,8 @@ const finalizarCompraBoton = document.querySelector('.finalizar_compra');
 
 // AGREGAR UN EVENT LISTENER AL BOTON DE FINALIZAR COMPRA ****************************************************
 finalizarCompraBoton.addEventListener('click', function() {
-// OBTENER LA CANTIDAD TOTAL DE COMPRA *********************************************************************
+
+// OBTENER LA CANTIDAD TOTAL DE COMPRA ***********************************************************************
   const total = document.querySelector('.total-carrito').textContent;
   
   // MOSTRAR AL USUARIO UN MENSAJE CON EL TOTAL DEL MONTO A PAGAR CON SWEET ALERT ****************************
