@@ -172,5 +172,10 @@ font-weight: bold;
 color: black;
 text-align: center;
 }
+.carrito_logo
+{
+border: none;
+text-align: end;
+}
   
   
